@@ -1,0 +1,15 @@
+<!-- app/views/articles/index.html.erb -->
+<div>
+  <h1 class="mb-3"><strong>Articles</strong></h1>
+  <button class="btn btn-light border"><%= link_to 'New', new_article_path %></button>
+</div>
+<div class="container">
+  <div class="row">
+    <div class="col-sm-8 col-sm-offset-2">
+      <% @articles.each do |article| %>
+        <h3><%=link_to article.title, article_path(article)%></h3>
+        <p><%= article.content %></p>
+      <% end %>
+    </div>
+  </div>
+</div>
